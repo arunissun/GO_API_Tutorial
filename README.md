@@ -21,15 +21,28 @@ Click the badge above to launch the notebooks in your browser - no installation 
 | `notebook_5.ipynb` | Surge alerts analysis |
 | `notebook_6.ipynb` | Deaths by event type and country |
 
+### 🏠 Local Units Management
+
+Specialized notebooks for managing Red Cross / Red Crescent local units.
+
+| Notebook | Description |
+|----------|-------------|
+| `01_list_local_units_by_country.ipynb` | List local units for a specific country with status filters |
+| `02_patch_local_unit.ipynb` | Update specific fields of an existing local unit (Staging) |
+| `03_put_local_unit.ipynb` | Create or fully replace Emergency Response/Training units (Staging) |
+| `04_bulk_upload_local_units.ipynb` | Download templates and perform bulk uploads via Excel |
+
 ## 🔧 Local Setup
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/IFRCGo/GO_API_TUT.git
    cd GO_API_TUT
    ```
 
 2. Create a virtual environment and install dependencies:
+
    ```bash
    python -m venv .venv
    source .venv/bin/activate  # On Windows: .venv\Scripts\activate
@@ -37,12 +50,14 @@ Click the badge above to launch the notebooks in your browser - no installation 
    ```
 
 3. Create a `.env` file with your API token:
+
    ```bash
    cp .env.example .env
    # Edit .env and add your token
    ```
 
 4. Launch Jupyter:
+
    ```bash
    jupyter notebook notebooks/
    ```
@@ -55,6 +70,7 @@ To use these notebooks, you need an IFRC GO API token.
 👉 [Generating an API Token - GO Wiki](https://go-wiki.ifrc.org/en/go-api/Connecting_to_GO_API#generating_an_api_token)
 
 Once you have your token, add it to your `.env` file:
+
 ```
 IFRC_API_TOKEN=your_token_here
 ```
@@ -64,6 +80,9 @@ IFRC_API_TOKEN=your_token_here
 ```
 GO_API_TUT/
 ├── notebooks/           # Jupyter notebooks
+│   ├── local_units/     # Local unit management notebooks
+│   │   ├── 01_list_local_units_by_country.ipynb
+│   │   └── ...
 │   ├── notebook_1.ipynb
 │   ├── notebook_2.ipynb
 │   └── ...
